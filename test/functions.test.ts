@@ -1,5 +1,5 @@
-import { closeDatabase, db, initDatabase } from './database';
-import { functions } from './functions';
+import { closeDatabase, db, initDatabase } from '../database';
+import { functions } from '../functions';
 import { afterAll, beforeAll, describe, expect, test } from '@jest/globals';
 
 beforeAll(initDatabase);
