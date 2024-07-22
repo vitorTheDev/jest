@@ -2,10 +2,10 @@ export let db;
 
 export const initDatabase = async () => {
   console.log('db init');
-  db = true;
+  db = {};
 }
 
 export const closeDatabase = async () => {
   console.log('db close');
-  db = false;
+  db = undefined;
 }
