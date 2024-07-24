@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import userRouter from "./routes/user";
 
-const startApp = async (port = 3000) => {
+const startApp = (port = 3000) => {
   const app: Express = express();
 
   app.get('/version', (_req, res) => res.status(200).send('1.0.0'))

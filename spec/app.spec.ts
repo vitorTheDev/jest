@@ -1,20 +1,22 @@
-import supertest from 'supertest';
-import { afterAll, beforeAll, expect, test } from '@jest/globals';
+import { afterAll, beforeAll, describe, expect, test } from '@jest/globals';
 import startApp from '../app/app';
+import { request } from './supertest';
+import './routes/user';
 
-const request = supertest('http://localhost:3333');
-let express;
+let express: ReturnType<typeof startApp> | null;
 
-beforeAll(async () => {
-  express = await startApp(3333);
-});
+beforeAll(() => {
+  express = startApp(3333);
+})
 
-afterAll(() =>{
-  express.server.close();
+afterAll(() => {
+  express!.server.close();
   express = null;
-});
+})
 
-test('The server should be able to start', async () => {
-  const res = await request.get('/version');
-  expect(res.status).toBe(200);
-});
+describe('basic server tests', () => {
+  test('The server should be able to start', async () => {
+    const res = await request.get('/version');
+    expect(res.status).toBe(200);
+  });
+})
