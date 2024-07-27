@@ -7,5 +7,9 @@ module.exports = {
   testPathIgnorePatterns: [
     'dist/',
     'node_modules/',
-  ]
+  ],
+  collectCoverage: true,
+  collectCoverageFrom: ["./app/**"],
+  coverageReporters: ['html'],
+  coverageDirectory: './coverage'
 };

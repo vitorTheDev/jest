@@ -1,3 +1,3 @@
 import startApp from './app/app';
 
-startApp();
+startApp(3000);
