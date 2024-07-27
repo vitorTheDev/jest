@@ -1,3 +1,3 @@
-# JEST Crash Course
+# JEST Tests
 
-Crash course doing jest basics.
+Testing JEST library for testing functions, classes and APIs.
