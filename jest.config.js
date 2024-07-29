@@ -5,7 +5,7 @@ module.exports = {
     "^.+.tsx?$": ["ts-jest", {}],
   },
   testPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
-  // watchPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
+  watchPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
   coveragePathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],

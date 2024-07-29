@@ -1,5 +1,5 @@
 import { UUIDRegex } from "../src/utils/regex";
-import UserRepository, { mockGetUser } from "../src/models/__mocks__/user.mock";
+import UserRepository, { mockGetUsers } from "../src/models/__mocks__/user.mock";
 import { beforeEach, expect, jest, test } from '@jest/globals';
 
 jest.mock('../src/models/user/user.ts', () => new UserRepository());
@@ -20,18 +20,18 @@ test('Should call constructor 1 times', async () => {
 
 test('Should call create user 1 times', async () => {
   const repo = new UserRepository();
-  repo.getUser();
-  expect(mockGetUser).toBeCalledTimes(1);
+  repo.getUsers();
+  expect(mockGetUsers).toBeCalledTimes(1);
 });
 
 test('Should create user and match uuid regex', async () => {
   const repo = new UserRepository();
-  const user = repo.getUser();
-  expect(user.id).toMatch(UUIDRegex);
+  const users = repo.getUsers();
+  expect(users?.shift()?.id).toMatch(UUIDRegex);
 });
 
 test('Should create user and have a string name', async () => {
   const repo = new UserRepository();
-  const user = repo.getUser();
-  expect(user.name).toEqual(expect.any(String));
+  const users = repo.getUsers();
+  expect(users?.shift()?.name).toEqual(expect.any(String));
 });

@@ -1,16 +1,15 @@
 import { Router } from "express";
+import UserRepository from "../../models/user/user";
 
 const router = Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
   if (!req.query.page) {
     res.status(400).send('Missing page parameter');
     return;
   }
-  res.status(200).send([
-    { id: '1', name: 'Vitor' },
-    { id: '2', name: 'Tester' },
-  ])
+  const users = await UserRepository.repo.getUsers();
+  res.status(200).send(users);
 });
 
 export default router;
