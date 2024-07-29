@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, test } from '@jest/globals';
-import startApp from '../app/app';
+import startApp from '../src/app/app';
 import { request } from './supertest';
 import './routes/user';
 

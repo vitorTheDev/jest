@@ -1,8 +1,8 @@
-import { UUIDRegex } from "../utils/regex";
-import UserRepository, { mockGetUser } from "../models/__mocks__/user";
+import { UUIDRegex } from "../src/utils/regex";
+import UserRepository, { mockGetUser } from "../src/models/__mocks__/user.mock";
 import { beforeEach, expect, jest, test } from '@jest/globals';
 
-jest.mock('../models/user/user.ts');
+jest.mock('../src/models/user/user.ts', () => new UserRepository());
 
 beforeEach(() => {
   UserRepository.mockClear();

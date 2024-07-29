@@ -2,14 +2,13 @@
 module.exports = {
   testEnvironment: "node",
   transform: {
-    "^.+.tsx?$": ["ts-jest",{}],
+    "^.+.tsx?$": ["ts-jest", {}],
   },
-  testPathIgnorePatterns: [
-    'dist/',
-    'node_modules/',
-  ],
+  testPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
+  // watchPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
+  coveragePathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/", "<rootDir>/src/main.ts"],
   collectCoverage: true,
-  collectCoverageFrom: ["./app/**"],
+  collectCoverageFrom: ["./src/**"],
   coverageReporters: ['html'],
   coverageDirectory: './coverage'
 };
