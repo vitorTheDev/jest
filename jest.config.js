@@ -10,5 +10,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],
   coverageReporters: ['html'],
-  coverageDirectory: './coverage'
+  coverageDirectory: './coverage',
+  globalSetup: './spec/jestGlobalSetup.ts',
+  globalTeardown: './spec/jestGlobalTeardown.ts',
 };
